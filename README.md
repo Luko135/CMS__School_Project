@@ -2,7 +2,8 @@
 
 -install node js veresion 16._._ or higher.
 -download repository
--in repository Folder run command
+-in repository Folder run command `npm install` or `npm i`
+-after downloading all packages run command `npm start`
 
 ## Extensions we used:
 
@@ -10,6 +11,7 @@
 -eslint
 -husky & lint-staged
 -styled components
+-react router DOM
 
 ## Available Scripts
 
