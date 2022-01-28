@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-rows: 200px 1fr;
+  grid-template-rows: 150px 1fr;
   grid-template-columns: 150px 1fr;
   background-color: ${({ theme }) => theme.colors.lightGrey};
 `;

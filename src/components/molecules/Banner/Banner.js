@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import banner from 'assets/images/indeks.jpg';
+import banner from 'assets/images/indeks2.jpg';
 const Wrapper = styled.div`
   width: 100%;
   grid-row: 1/2;
@@ -10,7 +10,7 @@ const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: contain;
-  background-color: red;
+  object-fit: cover;
 `;
 
 const Banner = () => {

@@ -12,6 +12,7 @@
 -husky & lint-staged
 -styled components
 -react router DOM
+-axios
 
 ## Available Scripts
 

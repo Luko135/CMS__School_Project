@@ -26,7 +26,7 @@ export const Logo = styled.div`
   align-items: center;
   margin-bottom: 30px;
   h1 {
-    font-size: 15px;
+    font-size: 17px;
     color: ${({ theme }) => theme.colors.white};
     text-align: right;
     margin-right: 20px;
