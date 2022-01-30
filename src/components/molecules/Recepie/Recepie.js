@@ -1,4 +1,5 @@
 import TitleWrapper from 'components/atoms/TitleWrapper/TitleWrapper';
+import { StyledLink } from 'components/organisms/Navigation/Navigation.styled';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -20,6 +21,7 @@ const ContentWrapper = styled.div`
   }
 `;
 const Button = styled.button`
+  text-align: center;
   width: 200px;
   padding: 10px;
   background-color: ${({ theme }) => theme.colors.darkGray};
@@ -28,7 +30,10 @@ const Button = styled.button`
   align-self: flex-end;
   font-weight: 600;
   font-size: ${({ theme }) => theme.fontSize.l};
-  color: ${({ theme }) => theme.colors.darkPurple};
+  `;
+const Link = styled(StyledLink)`
+color: ${({ theme }) => theme.colors.darkPurple};
+  margin  :0 ;
 `;
 
 const Recepie = ({
@@ -50,7 +55,9 @@ const Recepie = ({
         </ul>
         <p>{description}</p>
       </ContentWrapper>
-      <Button>Sprawdź</Button>
+      <Button>
+        <Link to="/">Sprawdź</Link>
+      </Button>
     </Wrapper>
   );
 };
