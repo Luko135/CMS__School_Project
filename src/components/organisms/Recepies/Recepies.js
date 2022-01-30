@@ -1,33 +1,48 @@
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Recepie from 'components/molecules/Recepie/Recepie';
-import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 const API_TOKEN = `98704fa53da1938fa99f9360bc3540`;
 
 const Wrapper = styled.div`
-  background-color: green;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  align-items: center;
+  overflow-y: auto;
+`;
+const Title = styled.h1`
+  margin: 0;
+  align-self: flex-start;
+  color: ${({ theme }) => theme.colors.darkGray};
 `;
 
 const Recepies = () => {
-  const [recepies, setRecepies] = useState([]);
   const { id } = useParams();
-
+  const [recepies, setRecepies] = useState([]);
   useEffect(() => {
     axios
       .post(
-        ' https://graphql.datocms.com/',
+        'https://graphql.datocms.com/',
         {
           query: `{
-            allRecepies{
-              id
-              title
-              category
-              ingredients
-              description
-            }
-          }`,
+            allRecepies(filter: {
+                     category: {
+                        eq: ${id}
+                       },
+                      }){
+                   id
+                       title
+                         category
+                         ingredients
+                         description
+                        }
+                  }`,
         },
         {
           headers: {
@@ -36,18 +51,17 @@ const Recepies = () => {
         }
       )
       .then(({ data: { data } }) => {
-        console.log(data.allRecepies);
         setRecepies(data.allRecepies);
         console.log(recepies);
       })
       .catch((error) => console.log(error));
-  }, []);
+  }, [id]);
   return (
     <Wrapper>
-      id:{id}
-      {recepies.map((recepie) => {
-        <Recepie recepie={recepie} />;
-      })}
+      <Title>{id}</Title>
+      {recepies.map((recepie) => (
+        <Recepie recepie={recepie} />
+      ))}
     </Wrapper>
   );
 };
