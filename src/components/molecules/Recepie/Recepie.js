@@ -14,10 +14,19 @@ const Wrapper = styled.div`
 `;
 const ContentWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
   p {
     letter-spacing: 1.1px;
+    width: 700px;
+  }
+  img {
+    max-width: 250px;
+  }
+  ul {
+    width: 350px;
   }
 `;
 const Button = styled.button`
@@ -30,14 +39,14 @@ const Button = styled.button`
   align-self: flex-end;
   font-weight: 600;
   font-size: ${({ theme }) => theme.fontSize.l};
-  `;
+`;
 const Link = styled(StyledLink)`
-color: ${({ theme }) => theme.colors.darkPurple};
-  margin  :0 ;
+  color: ${({ theme }) => theme.colors.darkPurple};
+  margin: 0;
 `;
 
 const Recepie = ({
-  recepie: { id, title, category, description, ingredients },
+  recepie: { id, title, category, description, ingredients, image },
 }) => {
   return (
     <Wrapper id={id}>
@@ -53,6 +62,7 @@ const Recepie = ({
             </li>
           ))}
         </ul>
+        <img src={image.url} alt="image" />
         <p>{description}</p>
       </ContentWrapper>
       <Button>
