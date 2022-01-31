@@ -13,6 +13,7 @@
 -styled components
 -react router DOM
 -axios
+-gsap
 
 ## Available Scripts
 

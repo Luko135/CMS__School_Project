@@ -9,6 +9,7 @@
     "axios": "^0.25.0",
     "babel-eslint": "^10.1.0",
     "components": "^0.1.0",
+    "gsap": "^3.9.1",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.2",
     "react": "^17.0.2",
